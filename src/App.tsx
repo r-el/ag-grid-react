@@ -27,10 +27,7 @@ function App() {
     return (
         <>
             <AgGridProvider modules={modules}>
-                {/* Data Grid will fill the size of the parent container */}
-                <div style={{ height: 500 }}>
                     <DataGrid rowData={rowData} columnDefs={colDefs} />
-                </div>
             </AgGridProvider>
         </>
     );
