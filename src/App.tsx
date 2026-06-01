@@ -2,6 +2,7 @@ import { AllCommunityModule } from "ag-grid-community";
 import { AgGridProvider, AgGridReact } from "ag-grid-react";
 import { useState } from "react";
 import "./App.css";
+import DataGrid from "./components/DataGrid";
 
 const modules = [AllCommunityModule];
 
@@ -28,7 +29,7 @@ function App() {
             <AgGridProvider modules={modules}>
                 {/* Data Grid will fill the size of the parent container */}
                 <div style={{ height: 500 }}>
-                    <AgGridReact rowData={rowData} columnDefs={colDefs} />
+                    <DataGrid rowData={rowData} columnDefs={colDefs} />
                 </div>
             </AgGridProvider>
         </>

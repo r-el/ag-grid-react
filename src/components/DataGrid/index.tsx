@@ -1,9 +1,7 @@
-function DataGrid() {
-  return (
-    <div>
-      <h1>hello world</h1>
-    </div>
-  )
+import { AgGridReact } from "ag-grid-react";
+
+function DataGrid({ rowData, columnDefs }) {
+    return <AgGridReact rowData={rowData} columnDefs={columnDefs} />;
 }
 
-export default DataGrid
+export default DataGrid;
