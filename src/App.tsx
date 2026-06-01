@@ -4,6 +4,7 @@ import { useState } from "react";
 import "./App.css";
 import DataGrid from "./components/DataGrid";
 import { carRowData } from "./data";
+import { carColumnDefs } from "./columns";
 
 const modules = [AllCommunityModule];
 
@@ -12,12 +13,7 @@ function App() {
     const [rowData, setRowData] = useState(carRowData);
 
     // Column Definitions: Defines the columns to be displayed.
-    const [colDefs, setColDefs] = useState([
-        { field: "make" },
-        { field: "model" },
-        { field: "price" },
-        { field: "electric" },
-    ]);
+    const [colDefs, setColDefs] = useState(carColumnDefs);
 
     // ...
 
