@@ -3,8 +3,8 @@ import { AgGridProvider } from "ag-grid-react";
 import { useState } from "react";
 import "./App.css";
 import DataGrid from "./components/DataGrid";
-import { carRowData } from "./data";
-import { carColumnDefs } from "./columns";
+import { carRowData } from "./features/cars/data";
+import { carColumnDefs } from "./features/cars/columns";
 
 const modules = [AllCommunityModule];
 
