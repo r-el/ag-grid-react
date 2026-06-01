@@ -1,5 +1,4 @@
 import "./App.css";
-
 import Car from "./features/cars";
 
 function App() {
