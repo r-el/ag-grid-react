@@ -1,4 +1,5 @@
 import type { ColDef, ValueFormatterParams } from "ag-grid-community";
+import { CompanyLogoRenderer } from "./cellRenderers";
 import type { SpaceMission } from "./types";
 
 const currencyFormatter = ({
@@ -14,7 +15,10 @@ export const spaceMissionColumnDefs: ColDef<SpaceMission>[] = [
         field: "mission",
         filter: false, // Column Definitions take precedence over Default Column Definitions
     },
-    { field: "company" },
+    {
+        field: "company",
+        cellRenderer: CompanyLogoRenderer, // Add component to column via cellRenderer
+    },
     { field: "location" },
     { field: "date" },
     {
