@@ -5,4 +5,5 @@ export type DataGridProps<TData> = {
     columnDefs: ColDef<TData>[];
     defaultColDef?: ColDef<TData>;
     pagination?: boolean;
+    onCellValueChanged?: any;
 };

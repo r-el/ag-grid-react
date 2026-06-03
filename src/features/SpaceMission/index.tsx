@@ -37,6 +37,9 @@ function SpaceMission() {
                     columnDefs={colDefs}
                     defaultColDef={defaultColDef}
                     pagination={true} // Enable Pagination
+                    onCellValueChanged={(event) =>
+                        console.log(`New Cell Value: ${event.value}`)
+                    } // Hook into CellValueChanged event and log value
                 />
             </AgGridProvider>
         </>
