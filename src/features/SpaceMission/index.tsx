@@ -36,6 +36,7 @@ function SpaceMission() {
                     rowData={rowData}
                     columnDefs={colDefs}
                     defaultColDef={defaultColDef}
+                    pagination={true} // Enable Pagination
                 />
             </AgGridProvider>
         </>
