@@ -31,4 +31,5 @@ export const spaceMissionColumnDefs: ColDef<SpaceMission>[] = [
 
 export const spaceMissionDefaultColDef: ColDef<SpaceMission> = {
     filter: true,
+    editable: true, // Enable editing on all cells
 };
