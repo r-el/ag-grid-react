@@ -1,9 +1,9 @@
 import { AllCommunityModule, type ColDef } from "ag-grid-community";
 import { AgGridProvider } from "ag-grid-react";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import DataGrid from "../../components/DataGrid";
-import type { SpaceMission } from "./types";
 import { spaceMissionColumnDefs } from "./columns";
+import type { SpaceMission } from "./types";
 
 const modules = [AllCommunityModule];
 
@@ -23,10 +23,19 @@ function SpaceMission() {
             .then((rowData) => setRowData(rowData)); // Update state of `rowData`
     }, []);
 
+    // Apply settings across all columns
+    const defaultColDef = useMemo(() => ({
+        filter: true, // Enable filtering on all columns
+    }));
+
     return (
         <>
             <AgGridProvider modules={modules}>
-                <DataGrid rowData={rowData} columnDefs={colDefs} />
+                <DataGrid
+                    rowData={rowData}
+                    columnDefs={colDefs}
+                    defaultColDef={defaultColDef}
+                />
             </AgGridProvider>
         </>
     );
