@@ -1,9 +1,12 @@
 import type { ColDef } from "ag-grid-community";
-import type { Car } from "./types";
+import type { SpaceMission } from "./types";
 
-export const carColumnDefs: ColDef<Car>[] = [
-    { field: "make" },
-    { field: "model" },
+export const spaceMissionColumnDefs: ColDef<SpaceMission>[] = [
+    { field: "mission" },
+    { field: "company" },
+    { field: "location" },
+    { field: "date" },
     { field: "price" },
-    { field: "electric" },
+    { field: "successful" },
+    { field: "rocket" },
 ];

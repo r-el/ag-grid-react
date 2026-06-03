@@ -1,6 +1,10 @@
-export type Car = {
-    make: string;
-    model: string;
+export type SpaceMission = {
+    mission: string;
+    company: string;
+    location: string;
+    date: string;
+    time: string;
+    rocket: string;
     price: number;
-    electric: boolean;
+    successful: boolean;
 };
