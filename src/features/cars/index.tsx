@@ -2,7 +2,7 @@ import { AllCommunityModule } from "ag-grid-community";
 import { AgGridProvider } from "ag-grid-react";
 import DataGrid from "../../components/DataGrid";
 import { useGridState } from "../../hooks/useGridState";
-import { carColumnDefs } from "./columns";
+import { carColumnDefs, carDefaultColDef } from "./columns";
 import { carRowData } from "./data";
 import type { Car as CarModel } from "./types";
 
@@ -15,11 +15,13 @@ function Car() {
     );
 
     return (
-        <>
-            <AgGridProvider modules={modules}>
-                <DataGrid rowData={rowData} columnDefs={columnDefs} />
-            </AgGridProvider>
-        </>
+        <AgGridProvider modules={modules}>
+            <DataGrid
+                rowData={rowData}
+                columnDefs={columnDefs}
+                defaultColDef={carDefaultColDef}
+            />
+        </AgGridProvider>
     );
 }
 
