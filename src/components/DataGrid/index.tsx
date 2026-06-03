@@ -6,6 +6,7 @@ function DataGrid<TData>({
     rowData,
     columnDefs,
     defaultColDef,
+    pagination,
 }: DataGridProps<TData>) {
     return (
         // Data Grid will fill the size of the parent container
@@ -14,6 +15,7 @@ function DataGrid<TData>({
                 rowData={rowData}
                 columnDefs={columnDefs}
                 defaultColDef={defaultColDef}
+                pagination={pagination}
             />
         </div>
     );
