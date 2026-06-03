@@ -10,3 +10,7 @@ export const spaceMissionColumnDefs: ColDef<SpaceMission>[] = [
     { field: "successful" },
     { field: "rocket" },
 ];
+
+export const spaceMissionDefaultColDef: ColDef<SpaceMission> = {
+    filter: true,
+};
