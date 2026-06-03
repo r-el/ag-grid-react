@@ -1,6 +1,8 @@
 import type { ColDef } from "ag-grid-community";
 import type { SpaceMission } from "./types";
 
+const currencyFormatter = (params) => "£" + params.value.toLocaleString();
+
 export const spaceMissionColumnDefs: ColDef<SpaceMission>[] = [
     { field: "mission", filter: false }, // Column Definitions take precedence over Default Column Definitions
     { field: "company" },
@@ -9,9 +11,7 @@ export const spaceMissionColumnDefs: ColDef<SpaceMission>[] = [
     {
         field: "price",
         // Return a formatted string for this column
-        valueFormatter: (params) => {
-            return "£" + params.value.toLocaleString();
-        },
+        valueFormatter: currencyFormatter,
     },
     { field: "successful" },
     { field: "rocket" },
