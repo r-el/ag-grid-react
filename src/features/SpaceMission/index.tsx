@@ -3,6 +3,7 @@ import { AgGridProvider } from "ag-grid-react";
 import { useEffect, useMemo, useState } from "react";
 import DataGrid from "../../components/DataGrid";
 import { spaceMissionColumnDefs, spaceMissionDefaultColDef } from "./columns";
+import { handleSpaceMissionCellValueChanged } from "./eventHandlers";
 import type { SpaceMission } from "./types";
 
 const modules = [AllCommunityModule];
@@ -37,6 +38,7 @@ function SpaceMission() {
                     columnDefs={colDefs}
                     defaultColDef={defaultColDef}
                     pagination={true} // Enable Pagination
+                    onCellValueChanged={handleSpaceMissionCellValueChanged} // Hook into CellValueChanged event and log value
                 />
             </AgGridProvider>
         </>
