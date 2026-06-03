@@ -1,5 +1,10 @@
+import type { CustomCellRendererProps } from "ag-grid-react";
+import type { SpaceMission } from "./types";
+
 // Custom Cell Renderer (Display flags based on cell value)
-export const CompanyLogoRenderer = ({ value }) => (
+export const CompanyLogoRenderer = ({
+    value,
+}: CustomCellRendererProps<SpaceMission, string>) => (
     <span
         style={{
             display: "flex",
