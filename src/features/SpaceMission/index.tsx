@@ -26,6 +26,7 @@ function SpaceMission() {
     // Apply settings across all columns
     const defaultColDef = useMemo<ColDef<SpaceMission>>(
         () => spaceMissionDefaultColDef,
+        [],
     );
 
     return (
