@@ -6,7 +6,13 @@ export const spaceMissionColumnDefs: ColDef<SpaceMission>[] = [
     { field: "company" },
     { field: "location" },
     { field: "date" },
-    { field: "price" },
+    {
+        field: "price",
+        // Return a formatted string for this column
+        valueFormatter: (params) => {
+            return "£" + params.value.toLocaleString();
+        },
+    },
     { field: "successful" },
     { field: "rocket" },
 ];
