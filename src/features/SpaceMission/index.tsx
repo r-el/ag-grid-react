@@ -36,7 +36,7 @@ function SpaceMission() {
     );
 
     const rowSelection = useMemo<GridOptions<SpaceMission>["rowSelection"]>(
-        () => ({ mode: "multiRow" }),
+        () => ({ mode: "multiRow", headerCheckbox: false }),
         [],
     );
 
