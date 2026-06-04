@@ -12,7 +12,13 @@ const currencyFormatter = ({
 function dateFormatter({ value }: ValueFormatterParams<SpaceMission, string>) {
     if (typeof value !== "string") return "";
 
-    return new Date(value).toLocaleDateString();
+    return new Date(value).toLocaleDateString("he-il", {
+        weekday: "long",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+    });
 }
 
-export { dateFormatter, currencyFormatter };
+export { currencyFormatter, dateFormatter };
+
