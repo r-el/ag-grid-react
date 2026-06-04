@@ -8,6 +8,7 @@ function DataGrid<TData>({
     defaultColDef,
     pagination,
     onCellValueChanged,
+    onSelectionChanged,
     rowSelection,
 }: DataGridProps<TData>) {
     return (
@@ -20,6 +21,7 @@ function DataGrid<TData>({
                 pagination={pagination}
                 rowSelection={rowSelection}
                 onCellValueChanged={onCellValueChanged}
+                onSelectionChanged={onSelectionChanged}
             />
         </div>
     );
