@@ -1,14 +1,7 @@
-import type { ColDef, ValueFormatterParams } from "ag-grid-community";
-import { CompanyLogoRenderer } from "./cellRenderers";
+import type { ColDef } from "ag-grid-community";
+import { CompanyLogoRenderer, SuccessfulRenderer } from "./cellRenderers";
+import { currencyFormatter, dateFormatter } from "./formatters";
 import type { SpaceMission } from "./types";
-
-const currencyFormatter = ({
-    value,
-}: ValueFormatterParams<SpaceMission, number>) => {
-    if (typeof value !== "number") return "";
-
-    return "£" + value.toLocaleString();
-};
 
 export const spaceMissionColumnDefs: ColDef<SpaceMission>[] = [
     {
@@ -20,12 +13,18 @@ export const spaceMissionColumnDefs: ColDef<SpaceMission>[] = [
         cellRenderer: CompanyLogoRenderer, // Add component to column via cellRenderer
     },
     { field: "location" },
-    { field: "date" },
+    {
+        field: "date",
+        valueFormatter: dateFormatter,
+    },
     {
         field: "price",
         valueFormatter: currencyFormatter, // Return a formatted string for this column
     },
-    { field: "successful" },
+    {
+        field: "successful",
+        cellRenderer: SuccessfulRenderer,
+    },
     { field: "rocket" },
 ];
 

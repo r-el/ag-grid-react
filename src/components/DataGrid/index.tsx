@@ -8,6 +8,8 @@ function DataGrid<TData>({
     defaultColDef,
     pagination,
     onCellValueChanged,
+    onSelectionChanged,
+    rowSelection,
 }: DataGridProps<TData>) {
     return (
         // Data Grid will fill the size of the parent container
@@ -17,7 +19,9 @@ function DataGrid<TData>({
                 columnDefs={columnDefs}
                 defaultColDef={defaultColDef}
                 pagination={pagination}
+                rowSelection={rowSelection}
                 onCellValueChanged={onCellValueChanged}
+                onSelectionChanged={onSelectionChanged}
             />
         </div>
     );

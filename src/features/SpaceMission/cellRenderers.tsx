@@ -2,7 +2,7 @@ import type { CustomCellRendererProps } from "ag-grid-react";
 import type { SpaceMission } from "./types";
 
 // Custom Cell Renderer (Display flags based on cell value)
-export const CompanyLogoRenderer = ({
+const CompanyLogoRenderer = ({
     value,
 }: CustomCellRendererProps<SpaceMission, string>) => (
     <span
@@ -38,3 +38,35 @@ export const CompanyLogoRenderer = ({
         </p>
     </span>
 );
+
+/* Custom Cell Renderer (Display tick / cross in 'Successful' column) */
+const SuccessfulRenderer = ({
+    value,
+}: CustomCellRendererProps<SpaceMission, boolean>) => (
+    <span
+        style={{
+            display: "flex",
+            height: "100%",
+            width: "100%",
+            alignItems: "center",
+            justifyContent: "center",
+        }}
+    >
+        <img
+            alt={value ? "Successful" : "Unsuccessful"}
+            src={
+                value
+                    ? "https://www.ag-grid.com/example-assets/icons/tick-in-circle.png"
+                    : "https://www.ag-grid.com/example-assets/icons/cross-in-circle.png"
+            }
+            style={{
+                display: "block",
+                width: "18px",
+                height: "18px",
+            }}
+        />
+    </span>
+);
+
+export { CompanyLogoRenderer, SuccessfulRenderer };
+
