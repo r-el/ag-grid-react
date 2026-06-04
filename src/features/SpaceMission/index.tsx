@@ -33,7 +33,7 @@ function SpaceMission() {
     );
 
     const rowSelection = useMemo<GridOptions<SpaceMission>["rowSelection"]>(
-        () => ({ mode: "singleRow" }),
+        () => ({ mode: "multiRow" }),
         [],
     );
 
@@ -46,7 +46,7 @@ function SpaceMission() {
                     defaultColDef={defaultColDef}
                     pagination={true} // Enable Pagination
                     onCellValueChanged={handleSpaceMissionCellValueChanged} // Hook into CellValueChanged event and log value
-                    rowSelection={rowSelection} // Enable Single Row Selection
+                    rowSelection={rowSelection} // Enable Multi Row Selection
                 />
             </AgGridProvider>
         </>
