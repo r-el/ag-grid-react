@@ -1,4 +1,4 @@
-import { type CellValueChangedEvent, type ColDef } from "ag-grid-community";
+import { type CellValueChangedEvent, type ColDef, type GridOptions } from "ag-grid-community";
 
 export type DataGridProps<TData> = {
     rowData: TData[];
@@ -6,4 +6,5 @@ export type DataGridProps<TData> = {
     defaultColDef?: ColDef<TData>;
     pagination?: boolean;
     onCellValueChanged?: (event: CellValueChangedEvent<TData>) => void;
+    rowSelection?: GridOptions<TData>["rowSelection"];
 };

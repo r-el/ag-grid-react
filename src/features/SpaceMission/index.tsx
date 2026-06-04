@@ -1,4 +1,8 @@
-import { AllCommunityModule, type ColDef } from "ag-grid-community";
+import {
+    AllCommunityModule,
+    type ColDef,
+    type GridOptions,
+} from "ag-grid-community";
 import { AgGridProvider } from "ag-grid-react";
 import { useEffect, useMemo, useState } from "react";
 import DataGrid from "../../components/DataGrid";
@@ -13,9 +17,7 @@ function SpaceMission() {
     const [rowData, setRowData] = useState<SpaceMission[]>([]);
 
     // Column Definition: Defines & controls grid columns.
-    const [colDefs, setColDefs] = useState<ColDef<SpaceMission>[]>(
-        spaceMissionColumnDefs,
-    );
+    const [colDefs] = useState<ColDef<SpaceMission>[]>(spaceMissionColumnDefs);
 
     // Fetch data & update rowData state
     useEffect(() => {
@@ -30,6 +32,11 @@ function SpaceMission() {
         [],
     );
 
+    const rowSelection = useMemo<GridOptions<SpaceMission>["rowSelection"]>(
+        () => ({ mode: "singleRow" }),
+        [],
+    );
+
     return (
         <>
             <AgGridProvider modules={modules}>
@@ -39,6 +46,7 @@ function SpaceMission() {
                     defaultColDef={defaultColDef}
                     pagination={true} // Enable Pagination
                     onCellValueChanged={handleSpaceMissionCellValueChanged} // Hook into CellValueChanged event and log value
+                    rowSelection={rowSelection} // Enable Single Row Selection
                 />
             </AgGridProvider>
         </>
