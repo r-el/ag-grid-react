@@ -1,5 +1,5 @@
 import type { ColDef } from "ag-grid-community";
-import { CompanyLogoRenderer } from "./cellRenderers";
+import { CompanyLogoRenderer, SuccessfulRenderer } from "./cellRenderers";
 import { currencyFormatter, dateFormatter } from "./formatters";
 import type { SpaceMission } from "./types";
 
@@ -21,7 +21,10 @@ export const spaceMissionColumnDefs: ColDef<SpaceMission>[] = [
         field: "price",
         valueFormatter: currencyFormatter, // Return a formatted string for this column
     },
-    { field: "successful" },
+    {
+        field: "successful",
+        cellRenderer: SuccessfulRenderer,
+    },
     { field: "rocket" },
 ];
 
